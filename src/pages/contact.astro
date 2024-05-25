@@ -1,0 +1,50 @@
+---
+
+import Section from '../components/Section.astro';
+import Base from '../layouts/Base.astro';
+import { AppConfig } from '../utils/AppConfig';
+
+
+const email = "your.email@example.com";
+const github = "https://github.com/yourusername";
+const linkedin = "https://www.linkedin.com/in/yourusername";
+const twitter = "https://twitter.com/yourusername";
+
+const {title, description} = AppConfig
+
+---
+
+<Base head={{ title, description }}>
+<Section>
+	<div class="text-center py-10">
+		<h1 class="text-4xl font-bold text-gray-800">Contact Me</h1>
+		<p class="text-lg mt-4 text-gray-600">I'd love to hear from you! Whether you have a question, want to collaborate, or just want to connect.</p>
+		<div class="mt-8 max-w-2xl mx-auto space-y-6">
+			<div class="bg-white shadow-md rounded-3xl p-6">
+				<h2 class="text-2xl font-semibold text-gray-800">Email</h2>
+				<p class="mt-2 text-gray-600"><a href={`mailto:${email}`} class="text-blue-600 hover:underline">${email}</a></p>
+			</div>
+			<div class="bg-white shadow-md rounded-3xl p-6">
+				<h2 class="text-2xl font-semibold text-gray-800">Social Media</h2>
+				<div class="mt-4 space-y-2 text-gray-600">
+					<p>
+						<a href={github} class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+							GitHub
+						</a>
+					</p>
+					<p>
+						<a href={linkedin} class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+							LinkedIn
+						</a>
+					</p>
+					<p>
+						<a href={twitter} class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+							Twitter
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</Section>
+</Base>
